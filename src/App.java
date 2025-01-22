@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Usuario {
+public class App extends Agenda {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -19,17 +19,13 @@ public class Usuario {
             scanner.nextLine(); // Consumir a quebra de linha
 
             switch (opcao){
-                case 1 -> adicionarUsuario(scanner);
-                case 2 -> listarUsuarios();
-                case 3 -> atualizarUsuario(scanner);
-                case 4 -> deletarUsuario(scanner);
+                case 1 -> creatUser(scanner);
+                case 2 -> listUser();
+                case 3 -> updateUser(scanner);
+                case 4 -> deleteUser(scanner);
                 case 0 -> System.out.println("Saindo...");
                 default -> System.out.println("Opção inválida. Tente novamente.");
             }
-
-
-        }
-
-
+        }while (opcao != 0);
     }
 }
